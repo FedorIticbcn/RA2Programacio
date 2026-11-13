@@ -10,8 +10,8 @@ public class Fil extends Thread {
 
     @Override
     public void run() {
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(nom + " " + i);
+        for (int i = 1; i < 10; i++) {
+            int acumulado = 0;
             if(delay > 0) {
                 try {
                     Thread.sleep(delay);
@@ -19,11 +19,14 @@ public class Fil extends Thread {
                     System.out.println(e.getMessage());
                     return;
                 }
-            }
+            } else {
+                for (int j = 1; j <= 1000; j++) {
+                    acumulado += j;
+                }
+            } 
+            
+            System.out.println(nom + " " + i);
         }
-    }
-
-    public static void main(String[] args) {
-        Fil juan = new Fil("Juan", 0);
+        System.out.println("Termina el fil " + nom);
     }
 }
