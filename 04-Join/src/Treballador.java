@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class Treballador extends Thread {
     private final float sou_anual_brut;
-    private int edat_inici_treball;
-    private int edat_fi_treball;
+    private final int edat_inici_treball;
+    private final int edat_fi_treball;
     private int edat_actual;
     private float cobrat;
     private final Random rnd = new Random();
